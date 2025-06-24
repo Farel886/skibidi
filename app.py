@@ -8,7 +8,6 @@ app = Flask(__name__)
 # === Gemini API Key ===
 API_KEY = "AIzaSyCjPL-cslkpqlR_jfJOFA4n5Jm2kliUyIA"
 
-# === Fungsi Pembersih Teks ===
 def bersihkan_teks(teks):
     return teks.replace("***", "").strip()
 
@@ -23,7 +22,11 @@ def generate_username():
     names = ["alpha", "neo", "cyber", "matrix", "code", "byte", "quantum", "dark", "zero", "ghost"]
     return random.choice(names) + str(random.randint(100, 999))
 
-def generate_password(length=12, use_symbols=True, use_uppercase=True, use_numbers=True):
+def generate_password():
+    use_symbols =  True
+    use_uppercase = True 
+    use_numbers = True
+    length = 12
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" if use_uppercase else ""
     numbers_set = "0123456789" if use_numbers else ""
